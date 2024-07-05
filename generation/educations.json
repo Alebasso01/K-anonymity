@@ -1,0 +1,27 @@
+{
+    "name": "ANY-EDUCATION",
+    "categories": [
+        {
+            "name": "High School",
+            "categories": []
+        },
+        {
+            "name": "Bachelor's Degree",
+            "categories": []
+        },
+        {
+            "name": "Graduate School",
+            "categories": [
+                {
+                    "name": "Master's Degree",
+                    "categories": []
+                },
+                {
+                    "name": "Doctoral Degree",
+                    "categories": []
+                }
+            ]
+        }
+    ]
+  }
+  

@@ -1,0 +1,74 @@
+{
+    "name": "USA",
+    "regions": [
+      {
+        "name": "North",
+        "states": [
+          {
+            "name": "New York",
+            "cities": ["New York City", "Buffalo", "Rochester"]
+          },
+          {
+            "name": "Illinois",
+            "cities": ["Chicago", "Aurora", "Naperville"]
+          },
+          {
+            "name": "Michigan",
+            "cities": ["Detroit", "Grand Rapids", "Warren"]
+          }
+        ]
+      },
+      {
+        "name": "South",
+        "states": [
+          {
+            "name": "Texas",
+            "cities": ["Houston", "Dallas", "Austin"]
+          },
+          {
+            "name": "Florida",
+            "cities": ["Miami", "Orlando", "Tampa"]
+          },
+          {
+            "name": "Georgia",
+            "cities": ["Atlanta", "Augusta", "Columbus"]
+          }
+        ]
+      },
+      {
+        "name": "West",
+        "states": [
+          {
+            "name": "California",
+            "cities": ["Los Angeles", "San Francisco", "San Diego"]
+          },
+          {
+            "name": "Nevada",
+            "cities": ["Las Vegas", "Reno", "Henderson"]
+          },
+          {
+            "name": "Washington",
+            "cities": ["Seattle", "Spokane", "Tacoma"]
+          }
+        ]
+      },
+      {
+        "name": "East",
+        "states": [
+          {
+            "name": "Massachusetts",
+            "cities": ["Boston", "Worcester", "Springfield"]
+          },
+          {
+            "name": "Pennsylvania",
+            "cities": ["Philadelphia", "Pittsburgh", "Allentown"]
+          },
+          {
+            "name": "Virginia",
+            "cities": ["Virginia Beach", "Norfolk", "Chesapeake"]
+          }
+        ]
+      }
+    ]
+  }
+  
