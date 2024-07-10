@@ -13,20 +13,8 @@ def drop_EI(df, EI):
     return df.drop(columns=EI)
 
 
-import json
-
 def find_parents(node, target, path=None, key=None):
-    """Trova tutti i genitori di un nodo target in un albero JSON.
-
-    Args:
-        node (dict or list): Nodo dell'albero JSON.
-        target (str): Nodo target da cercare.
-        path (list, optional): Percorso attuale nell'albero JSON. Default: None.
-        key (str, optional): Chiave per cercare il nodo target all'interno di un dizionario. Default: None.
-
-    Returns:
-        list or None: Lista di nomi dei genitori del nodo target oppure None se non trovato.
-    """
+    """ Find the parents of a target"""
     if path is None:
         path = []
 
@@ -62,16 +50,7 @@ def find_parents(node, target, path=None, key=None):
     return None
 
 def find_target_parents_in_json(file_path, target, key=None):
-    """Trova tutti i genitori di un nodo target in un file JSON specificato.
-
-    Args:
-        file_path (str): Percorso del file JSON.
-        target (str): Nodo target da cercare.
-        key (str, optional): Chiave per cercare il nodo target all'interno di un dizionario. Default: None.
-
-    Returns:
-        list or None: Lista di nomi dei genitori del nodo target oppure None se non trovato.
-    """
+    """ Find the parents of a target node in a JSON file."""
     with open(file_path, 'r') as file:
         data = json.load(file)
 
@@ -79,17 +58,7 @@ def find_target_parents_in_json(file_path, target, key=None):
 
 
 def find_lowest_common_ancestor(file_path, target1, target2, key=None):
-    """Trova l'antenato comune più basso di due nodi target in un file JSON.
-
-    Args:
-        file_path (str): Percorso del file JSON.
-        target1 (str): Primo nodo target.
-        target2 (str): Secondo nodo target.
-        key (str, optional): Chiave per cercare il nodo target all'interno di un dizionario. Default: None.
-
-    Returns:
-        str or None: Nome dell'antenato comune più basso oppure None se non trovato.
-    """
+    """ Find the lowest common ancestor of two nodes in a JSON file."""
     parents1 = find_target_parents_in_json(file_path, target1, key)
     parents2 = find_target_parents_in_json(file_path, target2, key)
 
@@ -117,7 +86,7 @@ def splitter(dataframe, column, k):
         left_partition = dataframe[dataframe[column] <= median_value]
         right_partition = dataframe[dataframe[column] > median_value]
     elif column in dataframe.select_dtypes(include='object').columns:
-        sorted_values = sorted(dataframe[column].unique())
+        sorted_values = sorted(dataframe[column])
         middle_index = len(sorted_values) // 2
         middle_value = sorted_values[middle_index]
         left_partition = dataframe[dataframe[column] <= middle_value]
@@ -126,7 +95,7 @@ def splitter(dataframe, column, k):
         # Skip columns that are neither numeric nor categorical
         return None, None
     
-    if len(left_partition) >= k and len(right_partition) >= k:
+    if len(left_partition) >= k and len(right_partition) >= k and len(left_partition) < k*2 and len(right_partition) < k*2:
         return left_partition, right_partition
     else:
         # Adjust partitions if lengths are less than k
@@ -206,10 +175,10 @@ def mondrian(database, k, qis, sd, ei, json_files):
     dataframe_partitions = []
 
     database = drop_EI(database, ei)
-    anonymized_data = recursive_partition(database, k, sd)
+    recursive_partition(database, k, sd)
     
     generalized_partitions = []
-    for i, partition in enumerate(dataframe_partitions):
+    for partition in dataframe_partitions:
         generalized_partition = generalize_partition(partition, qis, json_files, statistic='range')
         generalized_partitions.append(generalized_partition)
     
