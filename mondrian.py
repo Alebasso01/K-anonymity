@@ -104,8 +104,8 @@ def splitter(dataframe, column, k):
         return left_partition, right_partition
 
 
-def recursive_partition(dataset, k, sensitive_data):
-    """Splits the dataset in partitions recursively."""
+def iterative_partition(dataset, k, sensitive_data):
+    """Splits the dataset in partitions iteratively."""
     
     def axe_to_split(dataframe, sensitive_data):
         # Find column with highest cardinality (unique values) to split on
@@ -113,17 +113,21 @@ def recursive_partition(dataset, k, sensitive_data):
         max_cardinality_column = dataframe.drop(columns_to_exclude, axis=1).nunique().idxmax()
         return max_cardinality_column
     
-    # Base case: if dataset size is smaller than k*2, add it to partitions list
-    if len(dataset) < k*2:
-        dataframe_partitions.append(dataset)
-    else:
-        # Split according to column with highest cardinality
-        axe = axe_to_split(dataset, sensitive_data)
-        left_partition, right_partition = splitter(dataset, axe, k)
-        
-        # Recursively partition left and right partitions
-        recursive_partition(left_partition, k, sensitive_data)
-        recursive_partition(right_partition, k, sensitive_data)
+    stack = [dataset]
+    while stack:
+        current_dataset = stack.pop()
+        if len(current_dataset) < k * 2:
+            dataframe_partitions.append(current_dataset)
+        else:
+            axe = axe_to_split(current_dataset, sensitive_data)
+            left_partition, right_partition = splitter(current_dataset, axe, k)
+            
+            if left_partition is not None and right_partition is not None:
+                stack.append(left_partition)
+                stack.append(right_partition)
+            else:
+                dataframe_partitions.append(current_dataset)
+
 
 def generalize_partition(partition, qis, json_files, statistic):
     """ numerical quasi-identifiers are generalized using the statistic provided.
@@ -175,7 +179,7 @@ def mondrian(database, k, qis, sd, ei, json_files):
     dataframe_partitions = []
 
     database = drop_EI(database, ei)
-    recursive_partition(database, k, sd)
+    iterative_partition(database, k, sd)
     
     generalized_partitions = []
     for partition in dataframe_partitions:
