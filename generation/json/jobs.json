@@ -1,0 +1,688 @@
+{
+    "name": "ANY-JOB",
+    "categories": [
+        {
+            "name": "Health",
+            "categories": [
+                {
+                    "name": "Doctor",
+                    "specialties": {
+                        "Surgical Specialties": {
+                            "name": "Surgical Specialties",
+                            "items": ["Surgeon", "Cardiothoracic Surgeon", "Orthopedic Surgeon"]
+                        },
+                        "Medical Specialties": {
+                            "name": "Medical Specialties",
+                            "items": ["Pediatrician", "General Practitioner", "Internist"]
+                        }
+                    }
+                },
+                {
+                    "name": "Nurse",
+                    "specialties": {
+                        "Registered Nurse": {
+                            "name": "Registered Nurse",
+                            "items": ["Critical Care Nurse", "Emergency Nurse", "Labor and Delivery Nurse"]
+                        },
+                        "Advanced Practice Nurse": {
+                            "name": "Advanced Practice Nurse",
+                            "categories": [
+                                {
+                                    "name": "Nurse Practitioner",
+                                    "specialties": ["Family Nurse Practitioner", "Psychiatric Nurse Practitioner", "Acute Care Nurse Practitioner"]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Therapist",
+                    "specialties": {
+                        "Physical Therapist": {
+                            "name": "Physical Therapist",
+                            "items": ["Orthopedic Physical Therapist", "Pediatric Physical Therapist", "Sports Physical Therapist"]
+                        },
+                        "Occupational Therapist": {
+                            "name": "Occupational Therapist",
+                            "items": ["Pediatric Occupational Therapist", "Geriatric Occupational Therapist", "Rehabilitation Occupational Therapist"]
+                        },
+                        "Speech Therapist": {
+                            "name": "Speech Therapist",
+                            "items": ["Pediatric Speech Therapist", "Adult Speech Therapist", "Rehabilitation Speech Therapist"]
+                        }
+                    }
+                },
+                {
+                    "name": "Medical Technician",
+                    "specialties": {
+                        "Radiology Technician": {
+                            "name": "Radiology Technician",
+                            "items": ["MRI Technician", "CT Scan Technician", "X-ray Technician"]
+                        },
+                        "Laboratory Technician": {
+                            "name": "Laboratory Technician",
+                            "items": ["Clinical Laboratory Technician", "Research Laboratory Technician", "Pathology Technician"]
+                        },
+                        "Pharmacy Technician": {
+                            "name": "Pharmacy Technician",
+                            "items": ["Hospital Pharmacy Technician", "Retail Pharmacy Technician", "Compounding Pharmacy Technician"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Engineering",
+            "categories": [
+                {
+                    "name": "Civil Engineer",
+                    "specialties": {
+                        "Structural Engineer": {
+                            "name": "Structural Engineer",
+                            "items": ["Bridge Engineer", "Highway Engineer", "Building Engineer"]
+                        },
+                        "Transportation Engineer": {
+                            "name": "Transportation Engineer",
+                            "items": ["Traffic Engineer", "Rail Engineer", "Aviation Engineer"]
+                        },
+                        "Geotechnical Engineer": {
+                            "name": "Geotechnical Engineer",
+                            "items": ["Foundation Engineer", "Soil Mechanics Engineer", "Rock Mechanics Engineer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Software Developer",
+                    "specialties": {
+                        "Frontend Developer": {
+                            "name": "Frontend Developer",
+                            "items": ["UI Developer", "UX Designer", "Web Developer"]
+                        },
+                        "Backend Developer": {
+                            "name": "Backend Developer",
+                            "items": ["Database Developer", "Server-side Developer", "API Developer"]
+                        },
+                        "Full Stack Developer": {
+                            "name": "Full Stack Developer",
+                            "items": ["MEAN Stack Developer", "MERN Stack Developer", "LAMP Stack Developer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Electrical Engineer",
+                    "specialties": {
+                        "Power Engineer": {
+                            "name": "Power Engineer",
+                            "items": ["Power System Engineer", "Renewable Energy Engineer", "Electric Power Engineer"]
+                        },
+                        "Electronics Engineer": {
+                            "name": "Electronics Engineer",
+                            "items": ["Embedded Systems Engineer", "RF Engineer", "Digital Design Engineer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Mechanical Engineer",
+                    "specialties": {
+                        "Automotive Engineer": {
+                            "name": "Automotive Engineer",
+                            "items": ["Vehicle Design Engineer", "Powertrain Engineer", "Automotive Safety Engineer"]
+                        },
+                        "Aerospace Engineer": {
+                            "name": "Aerospace Engineer",
+                            "items": ["Aerodynamics Engineer", "Avionics Engineer", "Propulsion Engineer"]
+                        },
+                        "Manufacturing Engineer": {
+                            "name": "Manufacturing Engineer",
+                            "items": ["Process Engineer", "Quality Control Engineer", "Robotics Engineer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Chemical Engineer",
+                    "specialties": {
+                        "Process Engineer": {
+                            "name": "Process Engineer",
+                            "items": ["Petrochemical Engineer", "Pharmaceutical Engineer", "Food Process Engineer"]
+                        },
+                        "Materials Engineer": {
+                            "name": "Materials Engineer",
+                            "items": ["Polymer Engineer", "Metallurgical Engineer", "Ceramic Engineer"]
+                        },
+                        "Environmental Engineer": {
+                            "name": "Environmental Engineer",
+                            "items": ["Water Treatment Engineer", "Air Quality Engineer", "Waste Management Engineer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Management Engineer",
+                    "specialties": {
+                        "Project Manager": {
+                            "name": "Project Manager",
+                            "items": ["Construction Project Manager", "IT Project Manager", "Manufacturing Project Manager"]
+                        },
+                        "Operations Manager": {
+                            "name": "Operations Manager",
+                            "items": ["Logistics Manager", "Supply Chain Manager", "Production Manager"]
+                        },
+                        "Quality Manager": {
+                            "name": "Quality Manager",
+                            "items": ["Quality Assurance Manager", "Quality Control Manager", "Continuous Improvement Manager"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Legal Profession",
+            "categories": [
+                {
+                    "name": "Lawyer",
+                    "specialties": {
+                        "Corporate Lawyer": {
+                            "name": "Corporate Lawyer",
+                            "items": ["Mergers and Acquisitions Lawyer", "Corporate Compliance Lawyer", "Intellectual Property Lawyer"]
+                        },
+                        "Criminal Lawyer": {
+                            "name": "Criminal Lawyer",
+                            "items": ["Defense Lawyer", "Prosecutor", "Public Defender"]
+                        },
+                        "Family Lawyer": {
+                            "name": "Family Lawyer",
+                            "items": ["Divorce Lawyer", "Child Custody Lawyer", "Adoption Lawyer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Judge",
+                    "specialties": {
+                        "Trial Judge": {
+                            "name": "Trial Judge",
+                            "items": ["Criminal Court Judge", "Civil Court Judge", "Family Court Judge"]
+                        },
+                        "Appellate Judge": {
+                            "name": "Appellate Judge",
+                            "items": ["State Appellate Judge", "Federal Appellate Judge"]
+                        },
+                        "Administrative Judge": {
+                            "name": "Administrative Judge",
+                            "items": ["Labor Judge", "Environmental Judge", "Immigration Judge"]
+                        }
+                    }
+                },
+                {
+                    "name": "Magistrate",
+                    "specialties": {
+                        "District Magistrate": {
+                            "name": "District Magistrate",
+                            "items": ["Civil Magistrate", "Criminal Magistrate"]
+                        },
+                        "County Magistrate": {
+                            "name": "County Magistrate",
+                            "items": ["Probate Magistrate", "Family Magistrate"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Professor",
+            "categories": [
+                {
+                    "name": "Primary School Teacher",
+                    "specialties": {
+                        "Early Childhood Teacher": {
+                            "name": "Early Childhood Teacher",
+                            "items": ["Kindergarten Teacher", "Preschool Teacher"]
+                        },
+                        "Elementary Teacher": {
+                            "name": "Elementary Teacher",
+                            "items": ["Grade 1 Teacher", "Grade 2 Teacher", "Grade 3 Teacher"]
+                        }
+                    }
+                },
+                {
+                    "name": "Lower Secondary-School Teacher",
+                    "specialties": {
+                        "Middle School Teacher": {
+                            "name": "Middle School Teacher",
+                            "items": ["Math Teacher", "Science Teacher", "History Teacher"]
+                        },
+                        "Junior High School Teacher": {
+                            "name": "Junior High School Teacher",
+                            "items": ["English Teacher", "Geography Teacher", "Physical Education Teacher"]
+                        }
+                    }
+                },
+                {
+                    "name": "Higher Secondary-School Teacher",
+                    "specialties": {
+                        "High School Teacher": {
+                            "name": "High School Teacher",
+                            "items": ["Biology Teacher", "Chemistry Teacher", "Physics Teacher"]
+                        },
+                        "Specialized Subject Teacher": {
+                            "name": "Specialized Subject Teacher",
+                            "items": ["Economics Teacher", "Computer Science Teacher", "Art Teacher"]
+                        }
+                    }
+                },
+                {
+                    "name": "University Professor",
+                    "specialties": {
+                        "Researcher": {
+                            "name": "Researcher",
+                            "items": ["Postdoctoral Researcher", "Research Scientist", "Research Associate"]
+                        },
+                        "Assistant Professor": {
+                            "name": "Assistant Professor",
+                            "items": ["Lecturer", "Adjunct Professor"]
+                        },
+                        "Full Professor": {
+                            "name": "Full Professor",
+                            "items": ["Department Head", "Tenured Professor", "Endowed Chair"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Arts",
+            "categories": [
+                {
+                    "name": "Actor",
+                    "specialties": {
+                        "Film Actor": {
+                            "name": "Film Actor",
+                            "items": ["Action Movie Actor", "Drama Movie Actor", "Comedy Movie Actor"]
+                        },
+                        "Theater Actor": {
+                            "name": "Theater Actor",
+                            "items": ["Classical Theater Actor", "Musical Theater Actor", "Experimental Theater Actor"]
+                        },
+                        "Voice Actor": {
+                            "name": "Voice Actor",
+                            "items": ["Animation Voice Actor", "Video Game Voice Actor", "ADR Voice Actor"]
+                        }
+                    }
+                },
+                {
+                    "name": "Musician",
+                    "specialties": {
+                        "Composer": {
+                            "name": "Composer",
+                            "items": ["Film Composer", "Classical Composer", "Electronic Composer"]
+                        },
+                        "Instrumentalist": {
+                            "name": "Instrumentalist",
+                            "items": ["Pianist", "Guitarist", "Violinist"]
+                        },
+                        "Vocalist": {
+                            "name": "Vocalist",
+                            "items": ["Pop Singer", "Opera Singer", "Jazz Singer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Visual Artist",
+                    "specialties": {
+                        "Painter": {
+                            "name": "Painter",
+                            "items": ["Oil Painter", "Watercolor Painter", "Abstract Painter"]
+                        },
+                        "Sculptor": {
+                            "name": "Sculptor",
+                            "items": ["Stone Sculptor", "Metal Sculptor", "Wood Sculptor"]
+                        },
+                        "Illustrator": {
+                            "name": "Illustrator",
+                            "items": ["Children's Book Illustrator", "Comic Book Illustrator", "Digital Illustrator"]
+                        },
+                        "Photographer": {
+                            "name": "Photographer",
+                            "items": ["Portrait Photographer", "Landscape Photographer", "Commercial Photographer"]
+                        }
+                    }
+                },
+                {
+                    "name": "Dance",
+                    "specialties": {
+                        "Dancer": {
+                            "name": "Dancer",
+                            "items": ["Ballet Dancer", "Modern Dancer", "Hip-Hop Dancer"]
+                        },
+                        "Choreographer": {
+                            "name": "Choreographer",
+                            "items": ["Ballet Choreographer", "Musical Theater Choreographer", "Contemporary Choreographer"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Food",
+            "categories": [
+                {
+                    "name": "Chef",
+                    "specialties": {
+                        "Executive Chef": {
+                            "name": "Executive Chef",
+                            "items": ["Restaurant Executive Chef", "Hotel Executive Chef", "Resort Executive Chef"]
+                        },
+                        "Pastry Chef": {
+                            "name": "Pastry Chef",
+                            "items": ["Bakery Pastry Chef", "Restaurant Pastry Chef", "Hotel Pastry Chef"]
+                        },
+                        "Sous Chef": {
+                            "name": "Sous Chef",
+                            "items": ["Restaurant Sous Chef", "Catering Sous Chef", "Hotel Sous Chef"]
+                        }
+                    }
+                },
+                {
+                    "name": "Waiter",
+                    "specialties": {
+                        "Restaurant Waiter": {
+                            "name": "Restaurant Waiter",
+                            "items": ["Fine Dining Waiter", "Casual Dining Waiter", "Banquet Waiter"]
+                        },
+                        "Barista": {
+                            "name": "Barista",
+                            "items": ["Coffee Barista", "Tea Barista", "Specialty Drink Barista"]
+                        },
+                        "Bartender": {
+                            "name": "Bartender",
+                            "items": ["Cocktail Bartender", "Bar Bartender", "Event Bartender"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Factory",
+            "categories": [
+                {
+                    "name": "Assembly Line Worker",
+                    "specialties": {
+                        "Automobile Assembler": {
+                            "name": "Automobile Assembler",
+                            "items": ["Engine Assembler", "Chassis Assembler", "Electrical Systems Assembler"]
+                        },
+                        "Electronics Assembler": {
+                            "name": "Electronics Assembler",
+                            "items": ["Circuit Board Assembler", "Device Assembler", "Component Assembler"]
+                        },
+                        "Machinery Assembler": {
+                            "name": "Machinery Assembler",
+                            "items": ["Heavy Equipment Assembler", "Industrial Machine Assembler", "Precision Instrument Assembler"]
+                        }
+                    }
+                },
+                {
+                    "name": "Machine Operator",
+                    "specialties": {
+                        "CNC Operator": {
+                            "name": "CNC Operator",
+                            "items": ["Lathe Operator", "Milling Machine Operator", "Grinding Machine Operator"]
+                        },
+                        "Press Operator": {
+                            "name": "Press Operator",
+                            "items": ["Punch Press Operator", "Hydraulic Press Operator", "Brake Press Operator"]
+                        },
+                        "Injection Molding Operator": {
+                            "name": "Injection Molding Operator",
+                            "items": ["Plastic Molding Operator", "Metal Molding Operator", "Rubber Molding Operator"]
+                        }
+                    }
+                },
+                {
+                    "name": "Quality Control Inspector",
+                    "specialties": {
+                        "Product Inspector": {
+                            "name": "Product Inspector",
+                            "items": ["Electronics Inspector", "Mechanical Parts Inspector", "Textile Inspector"]
+                        },
+                        "Process Inspector": {
+                            "name": "Process Inspector",
+                            "items": ["Manufacturing Process Inspector", "Assembly Process Inspector", "Packaging Process Inspector"]
+                        },
+                        "Compliance Inspector": {
+                            "name": "Compliance Inspector",
+                            "items": ["Safety Compliance Inspector", "Environmental Compliance Inspector", "Regulatory Compliance Inspector"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Artisan",
+            "categories": [
+                {
+                    "name": "Electrician",
+                    "specialties": {
+                        "Residential Electrician": {
+                            "name": "Residential Electrician",
+                            "items": ["House Wiring Electrician", "Home Automation Electrician", "Security Systems Electrician"]
+                        },
+                        "Commercial Electrician": {
+                            "name": "Commercial Electrician",
+                            "items": ["Building Wiring Electrician", "HVAC Electrician", "Fire Alarm Systems Electrician"]
+                        },
+                        "Industrial Electrician": {
+                            "name": "Industrial Electrician",
+                            "items": ["Factory Electrician", "Maintenance Electrician", "Automation Systems Electrician"]
+                        }
+                    }
+                },
+                {
+                    "name": "Woodworker",
+                    "specialties": {
+                        "Carpenter": {
+                            "name": "Carpenter",
+                            "items": ["Framing Carpenter", "Finish Carpenter", "Cabinet Maker"]
+                        },
+                        "Furniture Maker": {
+                            "name": "Furniture Maker",
+                            "items": ["Custom Furniture Maker", "Commercial Furniture Maker", "Restoration Furniture Maker"]
+                        },
+                        "Woodturner": {
+                            "name": "Woodturner",
+                            "items": ["Bowl Turner", "Spindle Turner", "Artistic Woodturner"]
+                        }
+                    }
+                },
+                {
+                    "name": "Tailor",
+                    "specialties": {
+                        "Custom Tailor": {
+                            "name": "Custom Tailor",
+                            "items": ["Bespoke Tailor", "Wedding Dress Tailor", "Men's Suit Tailor"]
+                        },
+                        "Alterations Tailor": {
+                            "name": "Alterations Tailor",
+                            "items": ["Clothing Alterations Tailor", "Bridal Alterations Tailor", "Formal Wear Alterations Tailor"]
+                        },
+                        "Costume Tailor": {
+                            "name": "Costume Tailor",
+                            "items": ["Theater Costume Tailor", "Film Costume Tailor", "Historical Costume Tailor"]
+                        }
+                    }
+                },
+                {
+                    "name": "Leather Worker",
+                    "specialties": {
+                        "Leather Craftsman": {
+                            "name": "Leather Craftsman",
+                            "items": ["Bag Maker", "Belt Maker", "Shoe Maker"]
+                        },
+                        "Saddler": {
+                            "name": "Saddler",
+                            "items": ["Horse Saddle Maker", "Tack Maker", "Bridle Maker"]
+                        },
+                        "Upholsterer": {
+                            "name": "Upholsterer",
+                            "items": ["Furniture Upholsterer", "Automotive Upholsterer", "Marine Upholsterer"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Commerce",
+            "categories": [
+                {
+                    "name": "Retail",
+                    "specialties": {
+                        "Store Manager": {
+                            "name": "Store Manager",
+                            "items": ["Grocery Store Manager", "Clothing Store Manager", "Electronics Store Manager"]
+                        },
+                        "Sales Associate": {
+                            "name": "Sales Associate",
+                            "items": ["Cashier", "Sales Representative", "Customer Service Associate"]
+                        },
+                        "Merchandiser": {
+                            "name": "Merchandiser",
+                            "items": ["Visual Merchandiser", "Product Merchandiser", "Display Coordinator"]
+                        }
+                    }
+                },
+                {
+                    "name": "Wholesale",
+                    "specialties": {
+                        "Wholesale Manager": {
+                            "name": "Wholesale Manager",
+                            "items": ["Food Wholesale Manager", "Electronics Wholesale Manager", "Clothing Wholesale Manager"]
+                        },
+                        "Logistics Coordinator": {
+                            "name": "Logistics Coordinator",
+                            "items": ["Inventory Manager", "Shipping Coordinator", "Warehouse Supervisor"]
+                        },
+                        "Sales Representative": {
+                            "name": "Sales Representative",
+                            "items": ["Field Sales Representative", "Inside Sales Representative", "B2B Sales Representative"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Construction",
+            "categories": [
+                {
+                    "name": "Building",
+                    "specialties": {
+                        "Construction Worker": {
+                            "name": "Construction Worker",
+                            "items": ["Bricklayer", "Concrete Worker", "Roofer"]
+                        },
+                        "Construction Manager": {
+                            "name": "Construction Manager",
+                            "items": ["Site Manager", "Project Manager", "Safety Manager"]
+                        },
+                        "Skilled Tradesperson": {
+                            "name": "Skilled Tradesperson",
+                            "items": ["Plumber", "Electrician", "Carpenter"]
+                        }
+                    }
+                },
+                {
+                    "name": "Civil Engineering",
+                    "specialties": {
+                        "Civil Engineer": {
+                            "name": "Civil Engineer",
+                            "items": ["Road Engineer", "Bridge Engineer", "Infrastructure Engineer"]
+                        },
+                        "Surveyor": {
+                            "name": "Surveyor",
+                            "items": ["Land Surveyor", "Geodetic Surveyor", "Construction Surveyor"]
+                        },
+                        "Construction Estimator": {
+                            "name": "Construction Estimator",
+                            "items": ["Cost Estimator", "Quantity Surveyor", "Project Estimator"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tourism and Hospitality",
+            "categories": [
+                {
+                    "name": "Hotel Management",
+                    "specialties": {
+                        "Hotel Manager": {
+                            "name": "Hotel Manager",
+                            "items": ["Resort Manager", "Boutique Hotel Manager", "Chain Hotel Manager"]
+                        },
+                        "Front Desk": {
+                            "name": "Front Desk",
+                            "items": ["Receptionist", "Concierge", "Night Auditor"]
+                        },
+                        "Housekeeping": {
+                            "name": "Housekeeping",
+                            "items": ["Room Attendant", "Housekeeping Supervisor", "Laundry Attendant"]
+                        }
+                    }
+                },
+                {
+                    "name": "Tourism Services",
+                    "specialties": {
+                        "Tour Guide": {
+                            "name": "Tour Guide",
+                            "items": ["City Tour Guide", "Adventure Tour Guide", "Cultural Tour Guide"]
+                        },
+                        "Travel Agent": {
+                            "name": "Travel Agent",
+                            "items": ["Corporate Travel Agent", "Leisure Travel Agent", "Cruise Travel Agent"]
+                        },
+                        "Event Planner": {
+                            "name": "Event Planner",
+                            "items": ["Wedding Planner", "Corporate Event Planner", "Conference Organizer"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Agriculture",
+            "categories": [
+                {
+                    "name": "Farming",
+                    "specialties": {
+                        "Crop Farmer": {
+                            "name": "Crop Farmer",
+                            "items": ["Grain Farmer", "Vegetable Farmer", "Fruit Farmer"]
+                        },
+                        "Livestock Farmer": {
+                            "name": "Livestock Farmer",
+                            "items": ["Cattle Farmer", "Poultry Farmer", "Sheep Farmer"]
+                        },
+                        "Farm Manager": {
+                            "name": "Farm Manager",
+                            "items": ["Dairy Farm Manager", "Organic Farm Manager", "Commercial Farm Manager"]
+                        }
+                    }
+                },
+                {
+                    "name": "Agricultural Services",
+                    "specialties": {
+                        "Agronomist": {
+                            "name": "Agronomist",
+                            "items": ["Soil Scientist", "Crop Consultant", "Plant Breeder"]
+                        },
+                        "Agricultural Technician": {
+                            "name": "Agricultural Technician",
+                            "items": ["Irrigation Technician", "Pest Control Technician", "Soil Conservation Technician"]
+                        },
+                        "Food Scientist": {
+                            "name": "Food Scientist",
+                            "items": ["Food Safety Specialist", "Product Development Scientist", "Quality Control Scientist"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
