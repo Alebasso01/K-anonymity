@@ -63,6 +63,6 @@ def generate_profession_by_education_csv(filename, professions_by_education):
                 writer.writerow([education_level, profession])
 
 if __name__ == "__main__":
-    professions_by_education = load_professions_from_file('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\jobs.json')
-    generate_profession_by_education_csv('profession_by_education.csv', professions_by_education)
+    professions_by_education = load_professions_from_file('generation\\json\\jobs.json')
+    generate_profession_by_education_csv('generation\\csv\\profession_by_education.csv', professions_by_education)
     print("File 'profession_by_education.csv' creato con successo.")

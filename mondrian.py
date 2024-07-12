@@ -199,10 +199,10 @@ def mondrian(database, k, qis, sd, ei, json_files):
 
 
 json_files = {
-    'city': 'generation/cities.json',
-    'profession': 'generation/jobs.json',
-    'education': 'generation/educations.json',
-    'gender': 'generation/genders.json'
+    'city': 'generation\\json\\cities.json',
+    'profession': 'generation\\json\\jobs.json',
+    'education': 'generation\\json\\educations.json',
+    'gender': 'generation\\json\\genders.json'
 }
 
 k = 3

@@ -2,11 +2,11 @@
     "name": "ANY-GENDER",
     "categories": [
       {
-        "name": "Male",
+        "name": "male",
         "categories": []
       },
       {
-        "name": "Female",
+        "name": "female",
         "categories": []
       }
     ]

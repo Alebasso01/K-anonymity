@@ -76,7 +76,7 @@ income_data = {
 }
 
 # Carica le categorie dal file JSON
-categories = load_categories_from_json('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\jobs.json')
+categories = load_categories_from_json('generation\\json\\jobs.json')
 
 # Prepara i dati per il dataframe
 data = []
@@ -91,5 +91,5 @@ df = pd.DataFrame(data, columns=["Sectors", "Categories", "Average annual income
 print(df)
 
 # Salva il dataframe in un file CSV
-df.to_csv("average_annual_income.csv", index=False)
+df.to_csv("generation\\csv\\average_annual_income.csv", index=False)
 print("File 'average_annual_income.csv' creato con successo.")

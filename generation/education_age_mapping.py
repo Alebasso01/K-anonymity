@@ -31,6 +31,6 @@ def generate_education_distribution_csv(filename, education_levels):
             writer.writerow([age_range] + distribution)
 
 if __name__ == "__main__":
-    education_levels = load_education_levels('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\educations.json')
-    generate_education_distribution_csv('education_distribution_by_age.csv', education_levels)
+    education_levels = load_education_levels('generation\\json\\educations.json')
+    generate_education_distribution_csv('generation\\csv\\education_distribution_by_age.csv', education_levels)
     print(f"File 'education_distribution_by_age.csv' creato con successo.")
