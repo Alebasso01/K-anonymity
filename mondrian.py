@@ -9,8 +9,8 @@ def load_json(filename):
 
 
 # Function to drop specified columns from a DataFrame
-def drop_EI(df, EI):
-    return df.drop(columns=EI)
+def drop_column(df, col):
+    return df.drop(columns=col)
 
 
 def find_parents(node, target, path=None, key=None):
@@ -21,30 +21,23 @@ def find_parents(node, target, path=None, key=None):
     current_name = node.get('name', None) if isinstance(node, dict) else None
 
     if isinstance(node, dict):
-        # Caso in cui il nodo è un dizionario
         if key and node.get(key) == target:
-            # Se è stato trovato il nodo target all'interno del dizionario
             return path + [current_name]
 
         for k, v in node.items():
             if isinstance(v, list) and target in v:
-                # Se il nodo target è presente nella lista
                 return path + [current_name]
             elif isinstance(v, (dict, list)):
-                # Ricorsivamente cerca nei sotto-nodi
                 result = find_parents(v, target, path + [current_name] if current_name else path, key)
                 if result:
                     return result
     elif isinstance(node, list):
-        # Caso in cui il nodo è una lista
         for item in node:
             if isinstance(item, (dict, list)):
-                # Ricorsivamente cerca nei sotto-nodi
                 result = find_parents(item, target, path, key)
                 if result:
                     return result
             elif item == target:
-                # Se il nodo target è stato trovato nella lista
                 return path + [current_name]
 
     return None
@@ -65,11 +58,9 @@ def find_lowest_common_ancestor(file_path, target1, target2, key=None):
     if not parents1 or not parents2:
         return None
 
-    # Rimuove i valori None e deduplica le liste di genitori
     parents1 = [parent for parent in parents1 if parent]
     parents2 = [parent for parent in parents2 if parent]
 
-    # Trova l'antenato comune più basso confrontando i percorsi
     lca = None
     for p1, p2 in zip(parents1, parents2):
         if p1 == p2:
@@ -135,25 +126,20 @@ def generalize_partition(partition, qis, json_files, statistic):
     numerical_qis = [qi for qi in qis if partition[qi].dtype in ['int64', 'float64']]
     
     for qi in qis:
-        # Ordina la partizione in base al quasi-identificatore corrente
         partition = partition.sort_values(by=qi)
         
-        # Controlla se tutti i valori sono uguali per il quasi-identificatore corrente
         if partition[qi].iloc[0] != partition[qi].iloc[-1]:
             if qi in numerical_qis:
                 if statistic == 'range':
-                    # Se il quasi-identificatore è numerico, generalizza con il range di valori
                     min_val = partition[qi].iloc[0]
                     max_val = partition[qi].iloc[-1]
                     s = f"[{min_val}-{max_val}]"
                 elif statistic == 'mean':
-                    # Se il quasi-identificatore è numerico e la statistica è 'mean', generalizza con la media
                     mean_val = partition[qi].mean()
                     s = f"[{mean_val}]"
                 else:
                     raise ValueError("Statistic must be 'range' or 'mean'")
             else:
-                # Se il quasi-identificatore è categorico, cerca l'antenato comune più basso (LCA)
                 unique_values = sorted(set(partition[qi]))
                 if len(unique_values) == 1:
                     lca = unique_values[0]
@@ -169,7 +155,6 @@ def generalize_partition(partition, qis, json_files, statistic):
                         
                 s = f"[{lca}]"
             
-            # Sostituisce i valori del quasi-identificatore con la generalizzazione trovata
             partition[qi] = [s] * partition[qi].size
     
     return partition
@@ -178,7 +163,7 @@ def mondrian(database, k, qis, sd, ei, json_files):
     global dataframe_partitions
     dataframe_partitions = []
 
-    database = drop_EI(database, ei)
+    database = drop_column(database, ei)
     iterative_partition(database, k, sd)
     
     generalized_partitions = []
@@ -189,8 +174,6 @@ def mondrian(database, k, qis, sd, ei, json_files):
     anonymized_data = pd.concat(generalized_partitions, ignore_index=True)
     anonymized_data.to_csv('anonymized.csv', index=False)
     print("Dati anonimizzati salvati in anonymized.csv")
-    
-    # Print debugging information
     print(f"Numero di partizioni: {len(dataframe_partitions)}")
     total_rows = sum(len(partition) for partition in dataframe_partitions)
     print(f"Numero totale di righe nelle partizioni: {total_rows}")
