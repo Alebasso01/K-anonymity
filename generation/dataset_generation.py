@@ -5,7 +5,7 @@ import random
 import uuid
 from faker import Faker
 
-fake = Faker('en_US')
+fake = Faker('it_IT')
 
 def load_cities_from_file(filename):
     with open(filename, 'r') as f:
@@ -60,15 +60,37 @@ def get_annual_income_by_profession(profession, income_mapping):
             return random.randint(min_income, max_income)
     return random.randint(20000, 40000)
 
+gender_percentages = [48, 52]  # Male: 48%, Female: 52%
+
+age_groups = ['18-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80+']
+age_percentages = [12.24, 13.65, 14.35, 15.76, 16.94, 15.53, 11.53]
+
+def select_age():
+    age_group = random.choices(age_groups, weights=age_percentages, k=1)[0]
+    if age_group == '18-29':
+        return random.randint(18, 29)
+    elif age_group == '30-39':
+        return random.randint(30, 39)
+    elif age_group == '40-49':
+        return random.randint(40, 49)
+    elif age_group == '50-59':
+        return random.randint(50, 59)
+    elif age_group == '60-69':
+        return random.randint(60, 69)
+    elif age_group == '70-79':
+        return random.randint(70, 79)
+    else:
+        return random.randint(80, 90)
+
 def generate_fake_data(num_records, cities, genders, education_distribution, profession_mapping, income_mapping):
     data = []
     for _ in range(num_records):
         person_id = uuid.uuid4().hex[:8]
-        gender = random.choice(genders)
+        gender = random.choices(genders, weights=gender_percentages, k=1)[0]
         first_name = fake.first_name_male() if gender == 'male' else fake.first_name_female()
         last_name = fake.last_name()
         city = random.choice(cities)
-        age = random.randint(18, 90)
+        age = select_age()
         education = get_education_distribution_by_age(age, education_distribution)
         profession = get_profession_by_education(education, profession_mapping)
         annual_income = get_annual_income_by_profession(profession, income_mapping)
@@ -88,11 +110,11 @@ def save_to_csv(data, filename):
 
 if __name__ == "__main__":
     # Carica i dati dai file JSON e CSV
-    cities = load_cities_from_file('generation\\json\\cities.json')
+    cities = load_cities_from_file('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\cities.json')
     genders = ['male', 'female']
-    education_distribution = load_csv_to_dict('generation\\csv\\education_distribution_by_age.csv')
-    profession_mapping = load_profession_mapping_from_csv('generation\\csv\\profession_by_education.csv')
-    income_mapping = load_csv_to_dict('generation\\csv\\average_annual_income.csv')
+    education_distribution = load_csv_to_dict('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\education_distribution_by_age.csv')
+    profession_mapping = load_profession_mapping_from_csv('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\profession_by_education.csv')
+    income_mapping = load_csv_to_dict('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\average_annual_income.csv')
 
     # Genera dati falsi
     num_records = 1000
