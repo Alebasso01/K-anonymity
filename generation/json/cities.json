@@ -1,20 +1,40 @@
 {
-    "name": "USA",
+    "name": "Italy",
     "regions": [
       {
         "name": "North",
         "states": [
           {
-            "name": "New York",
-            "cities": ["New York City", "Buffalo", "Rochester"]
+            "name": "Liguria",
+            "cities": ["Genova", "Imperia", "Savona", "La Spezia"]
           },
           {
-            "name": "Illinois",
-            "cities": ["Chicago", "Aurora", "Naperville"]
+            "name": "Piemonte",
+            "cities": ["Torino", "Cuneo", "Asti", "Alessandria", "Vercelli", "Novara", "Biella", "Verbano-Cusio-Ossola"]
           },
           {
-            "name": "Michigan",
-            "cities": ["Detroit", "Grand Rapids", "Warren"]
+            "name": "Valle D'Aosta",
+            "cities": ["Aosta", "Sarre", "Châtillon", "Saint-Vincent"]
+          },
+          {
+            "name": "Lombardia",
+            "cities": ["Bergamo", "Brescia", "Como", "Cremona", "Lecco", "Lodi", "Mantova", "Milano", "Monza", "Pavia", "Sondrio", "Varese"]
+          },
+          {
+            "name": "Emilia-Romagna",
+            "cities": ["Piacenza", "Parma", "Reggio-Emilia", "Modena", "Bologna", "Ferrara", "Forlì-Cesena", "Ravenna"]
+          },
+          {
+            "name": "Trentino Alto-Adige",
+            "cities": ["Trento", "Bolzano", "Merano", "Rovereto", "Bressanone"]
+          },
+          {
+            "name": "Veneto",
+            "cities": ["Belluno", "Padova", "Rovigo", "Treviso", "Venezia", "Verona", "Vicenza"]
+          },
+          {
+            "name": "Friuli Venezia Giulia",
+            "cities": ["Gorizia", "Pordenone", "Trieste", "Udine"]
           }
         ]
       },
@@ -22,50 +42,57 @@
         "name": "South",
         "states": [
           {
-            "name": "Texas",
-            "cities": ["Houston", "Dallas", "Austin"]
+            "name": "Abruzzo",
+            "cities": ["Chieti", "L'Aquila", "Pescara", "Teramo"]
           },
           {
-            "name": "Florida",
-            "cities": ["Miami", "Orlando", "Tampa"]
+            "name": "Basilicata",
+            "cities": ["Potenza ", "Matera", "Melfi"]
           },
           {
-            "name": "Georgia",
-            "cities": ["Atlanta", "Augusta", "Columbus"]
+            "name": "Calabria",
+            "cities": ["Catanzaro", "Cosenza", "Crotone", "Reggio di Calabria", "Vibo Valentia"]
+          },
+          {
+            "name": "Campania",
+            "cities": ["Napoli", "Avellino", "Benevento", "Caserta", "Salerno"]
+          },
+          {
+            "name": "Molise",
+            "cities": ["Campobasso", "Isernia", "Termoli"]
+          },
+          {
+            "name": "Puglia",
+            "cities": ["Foggia", "Barletta-Andria-Trani", "Bari", "Taranto", "Brindisi", "Lecce"]
+          },
+          {
+            "name": "Sardegna",
+            "cities": ["Nuoro", "Oristano", "Gallura", "Ogliastra", "Sulcis Iglesiente", "Medio Campidano"]
+          },
+          {
+            "name": "Sicilia ",
+            "cities": ["Agrigento", "Caltanissetta", "Catania", "Enna", "Messina", "Palermo", "Ragusa", "Siracusa", "Trapani"]
           }
         ]
       },
       {
-        "name": "West",
+        "name": "Midlle",
         "states": [
           {
-            "name": "California",
-            "cities": ["Los Angeles", "San Francisco", "San Diego"]
+            "name": "Lazio",
+            "cities": ["Frosinone", "Viterbo", "Rieti", "Latina"]
           },
           {
-            "name": "Nevada",
-            "cities": ["Las Vegas", "Reno", "Henderson"]
+            "name": "Marche",
+            "cities": ["Ancona", "Ascoli Piceno", "Fermo", "Macerata", "Pesaro", "Urbino"]
           },
           {
-            "name": "Washington",
-            "cities": ["Seattle", "Spokane", "Tacoma"]
-          }
-        ]
-      },
-      {
-        "name": "East",
-        "states": [
-          {
-            "name": "Massachusetts",
-            "cities": ["Boston", "Worcester", "Springfield"]
+            "name": "Toscana",
+            "cities": ["Arezzo", "Firenze", "Grosseto", "Livorno", "Lucca", "Massa Carrara", "Pisa", "Pistoia", "Prato", "Siena"]
           },
           {
-            "name": "Pennsylvania",
-            "cities": ["Philadelphia", "Pittsburgh", "Allentown"]
-          },
-          {
-            "name": "Virginia",
-            "cities": ["Virginia Beach", "Norfolk", "Chesapeake"]
+            "name": "Umbria",
+            "cities": ["Perugia", "Terni", "Assisi", "Gubbio"]
           }
         ]
       }

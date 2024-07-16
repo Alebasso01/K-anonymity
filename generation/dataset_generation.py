@@ -110,11 +110,11 @@ def save_to_csv(data, filename):
 
 if __name__ == "__main__":
     # Carica i dati dai file JSON e CSV
-    cities = load_cities_from_file('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\cities.json')
+    cities = load_cities_from_file('generation\\json\\cities.json')
     genders = ['male', 'female']
-    education_distribution = load_csv_to_dict('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\education_distribution_by_age.csv')
-    profession_mapping = load_profession_mapping_from_csv('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\profession_by_education.csv')
-    income_mapping = load_csv_to_dict('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\csv\\average_annual_income.csv')
+    education_distribution = load_csv_to_dict('generation\\csv\\education_distribution_by_age.csv')
+    profession_mapping = load_profession_mapping_from_csv('generation\\csv\\profession_by_education.csv')
+    income_mapping = load_csv_to_dict('generation\\csv\\average_annual_income.csv')
 
     # Genera dati falsi
     num_records = 1000
