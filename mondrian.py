@@ -1,5 +1,7 @@
 import json
 import pandas as pd
+from test import check_k_anonymity
+from test import statistical_analysis
 
 def load_json(filename):
     """ Load a JSON file."""
@@ -159,7 +161,7 @@ def generalize_partition(partition, qis, json_files, statistic):
     
     return partition
 
-def mondrian(database, k, qis, sd, ei, json_files):
+def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=None):
     global dataframe_partitions
     dataframe_partitions = []
 
@@ -175,24 +177,42 @@ def mondrian(database, k, qis, sd, ei, json_files):
     anonymized_data.to_csv('anonymized.csv', index=False)
     print("Anonymized data saved in anonymized.csv")
     print(f"Number of partitions: {len(dataframe_partitions)}")
-
-
+    
+    # Controlla se il parametro facoltativo è stato fornito
+    if check is not None:
+        print("Check anonymization: ")
+        check_k_anonymity(anonymized_data, qis, k)
+        print("Check mean and standard deviation after anonymization: ")
+        statistical_analysis(data, anonymized_data, all_qis, numerical_qis, ordinal_qis)
+    
+    
 json_files = {
+    'city': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\cities.json',
+    'profession': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\jobs.json',
+    'education': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\educations.json',
+    'gender': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\genders.json'
+}    
+
+"""json_files = {
     'city': 'generation\\json\\cities.json',
     'profession': 'generation\\json\\jobs.json',
     'education': 'generation\\json\\educations.json',
     'gender': 'generation\\json\\genders.json'
-}
+} 
+"""
+
 
 k = 3
 
-data = pd.read_csv("generation\\database.csv")
+data = pd.read_csv("dpp_kanonymity\\K-anonymity\\generation\\database.csv")
+#data = pd.read_csv("generation\\database.csv")
 
 numerical_qis = ['age']
 categorical_qis = ['gender', 'city', 'education', 'profession']
+ordinal_qis = ['education', 'gender']
 all_qis = categorical_qis + numerical_qis
 explicit_identifier = ['person_id', 'first_name', 'last_name']
 sensitive_data = ['annual_income']
 statistic = "range"
 
-anonymized_data = mondrian(data, k, all_qis, sensitive_data, explicit_identifier ,json_files)
+anonymized_data = mondrian(data, k, all_qis, sensitive_data, explicit_identifier, json_files, ordinal_qis)
