@@ -109,18 +109,15 @@ def save_to_csv(data, filename):
         writer.writerows(data)
 
 if __name__ == "__main__":
-    # Carica i dati dai file JSON e CSV
     cities = load_cities_from_file('generation\\json\\cities.json')
     genders = ['male', 'female']
     education_distribution = load_csv_to_dict('generation\\csv\\education_distribution_by_age.csv')
     profession_mapping = load_profession_mapping_from_csv('generation\\csv\\profession_by_education.csv')
     income_mapping = load_csv_to_dict('generation\\csv\\average_annual_income.csv')
 
-    # Genera dati falsi
     num_records = 1000
     data = generate_fake_data(num_records, cities, genders, education_distribution, profession_mapping, income_mapping)
 
-    # Salva i dati in un file CSV
     save_to_csv(data, 'database.csv')
 
     print("Dataset generato con successo e salvato in 'database.csv'.")

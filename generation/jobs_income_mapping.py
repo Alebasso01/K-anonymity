@@ -2,7 +2,6 @@ import csv
 import json
 import pandas as pd
 
-# Funzione per caricare le categorie dal file JSON
 def load_categories_from_json(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         jobs_data = json.load(f)
@@ -24,7 +23,6 @@ def load_categories_from_json(filename):
     
     return categories
 
-# Funzione per risalire il nodo padre e trovare lo stipendio
 def find_income(category, income_data, parent_category):
     if category in income_data:
         return income_data[category]
@@ -33,7 +31,6 @@ def find_income(category, income_data, parent_category):
     else:
         return "N/A"
 
-# Dati sugli stipendi
 income_data = {
     "Doctor": "60,000 - 120,000",
     "Nurse": "30,000 - 45,000",
@@ -75,21 +72,16 @@ income_data = {
     "Agricultural Services": "25,000 - 40,000"
 }
 
-# Carica le categorie dal file JSON
 categories = load_categories_from_json('generation\\json\\jobs.json')
 
-# Prepara i dati per il dataframe
 data = []
 for parent_category, category in categories:
     income = find_income(category, income_data, parent_category)
     data.append([parent_category, category, income])
 
-# Crea il dataframe
 df = pd.DataFrame(data, columns=["Sectors", "Categories", "Average annual income (€)"])
 
-# Stampa il dataframe
 print(df)
 
-# Salva il dataframe in un file CSV
 df.to_csv("generation\\csv\\average_annual_income.csv", index=False)
 print("File 'average_annual_income.csv' creato con successo.")

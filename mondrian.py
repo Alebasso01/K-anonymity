@@ -1,15 +1,15 @@
 import json
 import pandas as pd
 
-# Function to load JSON data from file
 def load_json(filename):
+    """ Load a JSON file."""
     with open(filename, 'r') as file:
         data = json.load(file)
     return data
 
 
-# Function to drop specified columns from a DataFrame
 def drop_column(df, col):
+    """ Drop a column from a DataFrame."""
     return df.drop(columns=col)
 
 
@@ -99,7 +99,7 @@ def iterative_partition(dataset, k, sensitive_data):
     """Splits the dataset in partitions iteratively."""
     
     def axe_to_split(dataframe, sensitive_data):
-        # Find column with highest cardinality (unique values) to split on
+        # Find column with highest cardinality to split on
         columns_to_exclude = [col for col in dataframe.columns if col in sensitive_data]
         max_cardinality_column = dataframe.drop(columns_to_exclude, axis=1).nunique().idxmax()
         return max_cardinality_column
@@ -173,12 +173,8 @@ def mondrian(database, k, qis, sd, ei, json_files):
     
     anonymized_data = pd.concat(generalized_partitions, ignore_index=True)
     anonymized_data.to_csv('anonymized.csv', index=False)
-    print("Dati anonimizzati salvati in anonymized.csv")
-    print(f"Numero di partizioni: {len(dataframe_partitions)}")
-    total_rows = sum(len(partition) for partition in dataframe_partitions)
-    print(f"Numero totale di righe nelle partizioni: {total_rows}")
-    print(f"Numero originale di righe: {len(database)}")
-    print(f"Numero totale di righe anonimizzate: {len(anonymized_data)}")
+    print("Anonymized data saved in anonymized.csv")
+    print(f"Number of partitions: {len(dataframe_partitions)}")
 
 
 json_files = {
