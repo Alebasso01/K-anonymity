@@ -48,8 +48,7 @@ def create_mapping(levels, start_value=1):  # starting from 1, so we exclude ANY
     recursive_map(levels['categories'], start_value)
     return mapping
 
-with open('C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\educations.json', 'r') as f:
-#with open('generation\\json\\educations.json', 'r') as f:
+with open('generation\\json\\educations.json', 'r') as f:
     education_levels = json.load(f)
 
 education_mapping = create_mapping(education_levels)
@@ -68,14 +67,13 @@ def mapping(col):
 ordinal_qis = ['education', 'gender']
 
 def statistical_analysis(original_df, anonymized_df, all_qis, numerical_qis, ordinal_qis):
-   
-    original_df = original_df[all_qis]
-    anonymized_df = anonymized_df[all_qis]
+    original_df = original_df[all_qis].copy()
+    anonymized_df = anonymized_df[all_qis].copy()
 
     print("Analysis of numerical columns:")
     for col in numerical_qis:
         anonymized_df.loc[:, col] = anonymized_df[col].apply(calculate_mean)
-        
+
         mean_original = original_df[col].mean()
         mean_anonymized = anonymized_df[col].mean()
         std_original = original_df[col].std()
@@ -90,20 +88,19 @@ def statistical_analysis(original_df, anonymized_df, all_qis, numerical_qis, ord
     print("Analysis of ordinal categorical columns:")
     for col in ordinal_qis:
         col_mapping = mapping(col)
-        anonymized_df.loc[:, col] = anonymized_df[col].apply(calculate_mean)
         original_df.loc[:, col] = original_df[col].map(col_mapping)
+        anonymized_df.loc[:, col] = anonymized_df[col].map(col_mapping)
         
         anonymized_filtered = anonymized_df[anonymized_df[col].notna()]
         original_filtered = original_df[original_df[col].notna()]
         
         mean_anonymized = anonymized_filtered[col].mean()
-        std_anonymized = anonymized_filtered[col].var()
+        var_anonymized = anonymized_filtered[col].var()
         mean_original = original_filtered[col].mean()
-        std_original = original_filtered[col].var()
+        var_original = original_filtered[col].var()
         
         print(f"Column: {col}")
         print(f"  Original mean: {mean_original}")
         print(f"  Anonymized mean: {mean_anonymized}")
-        print(f"  Original variance: {std_original}")
-        print(f"  Anonymized variance: {std_anonymized}")
-
+        print(f"  Original variance: {var_original}")
+        print(f"  Anonymized variance: {var_anonymized}")

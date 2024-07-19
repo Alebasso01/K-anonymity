@@ -161,7 +161,7 @@ def generalize_partition(partition, qis, json_files, statistic):
     
     return partition
 
-def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=None):
+def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=True):
     global dataframe_partitions
     dataframe_partitions = []
 
@@ -187,25 +187,17 @@ def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=None):
     
     
 json_files = {
-    'city': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\cities.json',
-    'profession': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\jobs.json',
-    'education': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\educations.json',
-    'gender': 'C:\\Users\\bianc\\OneDrive\\Desktop\\python\\dpp_kanonymity\\K-anonymity\\generation\\json\\genders.json'
-}    
-
-"""json_files = {
     'city': 'generation\\json\\cities.json',
     'profession': 'generation\\json\\jobs.json',
     'education': 'generation\\json\\educations.json',
     'gender': 'generation\\json\\genders.json'
 } 
-"""
+
 
 
 k = 3
 
-data = pd.read_csv("dpp_kanonymity\\K-anonymity\\generation\\database.csv")
-#data = pd.read_csv("generation\\database.csv")
+data = pd.read_csv("generation\\database.csv")
 
 numerical_qis = ['age']
 categorical_qis = ['gender', 'city', 'education', 'profession']
