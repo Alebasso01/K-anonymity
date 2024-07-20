@@ -95,7 +95,7 @@ def generate_fake_data(num_records, cities, genders, education_distribution, pro
         profession = get_profession_by_education(education, profession_mapping)
         annual_income = get_annual_income_by_profession(profession, income_mapping)
         
-        data.append([person_id, first_name, last_name, gender, city, age, profession, education, annual_income])
+        data.append([person_id, first_name, last_name, gender, city, age, education, profession, annual_income])
     
     return data
 
@@ -105,7 +105,7 @@ def save_to_csv(data, filename):
     
     with open(file_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['person_id', 'first_name', 'last_name', 'gender', 'city', 'age', 'profession', 'education', 'annual_income'])
+        writer.writerow(['person_id', 'first_name', 'last_name', 'gender', 'city', 'age', 'education', 'profession', 'annual_income'])
         writer.writerows(data)
 
 if __name__ == "__main__":

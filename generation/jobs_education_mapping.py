@@ -44,11 +44,11 @@ def load_professions_from_file(filename):
 
     for category in jobs_data['categories']:
         category_name = category['name']
-        if category_name == "Factory" or category_name == "Food" or category_name == "Arts":
+        if category_name == "Factory" or category_name == "Food" or category_name == "Arts" or category_name == "Agriculture":
             extract_jobs([category], "High School")
-        if category_name == "Engineering" or category_name == "Commerce" or category_name == "Tourism and Hospitality" or category_name == "Agriculture":
+        if category_name == "Engineering" or category_name == "Commerce" or category_name == "Tourism and Hospitality" :
             extract_jobs([category], "Bachelor's Degree")
-        if category_name == "Health" or category_name == "Legal Profession" or category_name == "Professor":
+        if category_name == "Health" or category_name == "Legal Profession" or category_name == "Professor" or category_name == "Engineering":
             extract_jobs([category], "Master's Degree")
             extract_jobs([category], "Doctoral Degree")
     
