@@ -66,7 +66,7 @@ def mapping(col):
     
 ordinal_qis = ['education', 'gender']
 
-def statistical_analysis(original_df, anonymized_df, all_qis, numerical_qis, ordinal_qis):
+def print_statistical_analysis(original_df, anonymized_df, all_qis, numerical_qis, ordinal_qis):
     original_df = original_df[all_qis].copy()
     anonymized_df = anonymized_df[all_qis].copy()
 

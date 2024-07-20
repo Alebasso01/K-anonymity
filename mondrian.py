@@ -1,7 +1,9 @@
 import json
 import pandas as pd
 from test import check_k_anonymity
-from test import statistical_analysis
+from test import print_statistical_analysis
+from random_perturbation import add_perturbation
+from random_perturbation import print_mean_variance
 
 def load_json(filename):
     """ Load a JSON file."""
@@ -161,7 +163,7 @@ def generalize_partition(partition, qis, json_files, statistic):
     
     return partition
 
-def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=True):
+def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=None):
     global dataframe_partitions
     dataframe_partitions = []
 
@@ -174,17 +176,17 @@ def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=True):
         generalized_partitions.append(generalized_partition)
     
     anonymized_data = pd.concat(generalized_partitions, ignore_index=True)
-    anonymized_data.to_csv('anonymized.csv', index=False)
+    perturbated_data = add_perturbation(anonymized_data, sensitive_data)
+    perturbated_data.to_csv('anonymized.csv', index=False)
     print("Anonymized data saved in anonymized.csv")
     print(f"Number of partitions: {len(dataframe_partitions)}")
     
-    # Controlla se il parametro facoltativo è stato fornito
     if check is not None:
         print("Check anonymization: ")
         check_k_anonymity(anonymized_data, qis, k)
         print("Check mean and standard deviation after anonymization: ")
-        statistical_analysis(data, anonymized_data, all_qis, numerical_qis, ordinal_qis)
-    
+        print_statistical_analysis(database, anonymized_data, all_qis, numerical_qis, ordinal_qis)
+        print_mean_variance(database, perturbated_data, sensitive_data)
     
 json_files = {
     'city': 'generation\\json\\cities.json',
@@ -206,5 +208,6 @@ all_qis = categorical_qis + numerical_qis
 explicit_identifier = ['person_id', 'first_name', 'last_name']
 sensitive_data = ['annual_income']
 statistic = "range"
+check = True # da aggiungere per stampare la media e la deviazione standard del dataset originale e anonimizzato
 
-anonymized_data = mondrian(data, k, all_qis, sensitive_data, explicit_identifier, json_files, ordinal_qis)
+anonymized_data = mondrian(data, k, all_qis, sensitive_data, explicit_identifier, json_files, ordinal_qis, check)
