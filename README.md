@@ -1,7 +1,7 @@
 # Mondrian Anonymization Project
 
 
-This project implements the Mondrian anonymization algorithm to anonymize a dataset, ensuring that sensitive information is protected while retaining the utility of the data. The project supports both numerical and categorical columns, with the use of JSON files for handling categorical data. Additionally, it includes a script to generate a synthetic dataset for testing the anonymization process. 
+This project implements the Mondrian anonymization algorithm to anonymize a dataset, ensuring that sensitive information is protected while retaining the utility of the data. The project supports both numerical and categorical columns, with the use of JSON files for handling categorical data. A random perturbation technique is implemented for sensititve data in order to avoid re-identification. Additionally, it includes a script to generate a synthetic dataset for testing the anonymization process. 
 
 ## Overview
 The project consists of:
@@ -11,6 +11,9 @@ A script generates a synthetic dataset containing personal information such as n
 
 - **Anonymization** :
 The Mondrian algorithm is implemented to anonymize the dataset by generalizing quasi-identifiers while preserving data utility and sensitive data.
+
+- **Random Perturbation** :
+In order to avoid re-identification, a script applies random perturbation on sensitive data, preserving mean and variance of each sensitive attribute so that utility is maintained.
 
 ## Instructions :
 
@@ -54,5 +57,5 @@ python mondrian.py
 
 ## Test
 
-In the project we analyzed both mean and variance. Numerical attributes undergo mean and variance calculation, while categorical attributes are mapped based on hierarchical ordering where feasible. Additionally, a discernibility penalty function was implemented to quantify the uniqueness of quasi-identifiers, enhancing the anonymization process and ensuring robust data protection. We also included a function to calculate the equivalence size metric, which provides an additional measure of the quality of the k-anonymization:
+In the project we analyzed both mean and variance. Numerical attributes undergo mean and variance calculation, while categorical attributes are mapped based on hierarchical ordering where feasible. Additionally, a discernibility penalty function was implemented to quantify the uniqueness of quasi-identifiers, enhancing the anonymization process and ensuring robust data protection. We also included a function to calculate the equivalence size metric, which provides an additional measure of the quality of the k-anonymization. 
 
