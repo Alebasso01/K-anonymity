@@ -14,7 +14,7 @@
           },
           {
             "name": "Valle D'Aosta",
-            "cities": ["Aosta", "Sarre", "Châtillon", "Saint-Vincent"]
+            "cities": ["Aosta", "Sarre", "Chatillon", "Saint-Vincent"]
           },
           {
             "name": "Lombardia",
@@ -22,7 +22,7 @@
           },
           {
             "name": "Emilia-Romagna",
-            "cities": ["Piacenza", "Parma", "Reggio-Emilia", "Modena", "Bologna", "Ferrara", "Forlì-Cesena", "Ravenna"]
+            "cities": ["Piacenza", "Parma", "Reggio-Emilia", "Modena", "Bologna", "Ferrara", "Forli-Cesena", "Ravenna"]
           },
           {
             "name": "Trentino Alto-Adige",
