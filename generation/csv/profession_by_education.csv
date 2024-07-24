@@ -80,6 +80,24 @@ High School,Packaging Process Inspector
 High School,Safety Compliance Inspector
 High School,Environmental Compliance Inspector
 High School,Regulatory Compliance Inspector
+High School,Grain Farmer
+High School,Vegetable Farmer
+High School,Fruit Farmer
+High School,Cattle Farmer
+High School,Poultry Farmer
+High School,Sheep Farmer
+High School,Dairy Farm Manager
+High School,Organic Farm Manager
+High School,Commercial Farm Manager
+High School,Soil Scientist
+High School,Crop Consultant
+High School,Plant Breeder
+High School,Irrigation Technician
+High School,Pest Control Technician
+High School,Soil Conservation Technician
+High School,Food Safety Specialist
+High School,Product Development Scientist
+High School,Quality Control Scientist
 Bachelor's Degree,Bridge Engineer
 Bachelor's Degree,Highway Engineer
 Bachelor's Degree,Building Engineer
@@ -167,24 +185,6 @@ Bachelor's Degree,Cruise Travel Agent
 Bachelor's Degree,Wedding Planner
 Bachelor's Degree,Corporate Event Planner
 Bachelor's Degree,Conference Organizer
-Bachelor's Degree,Grain Farmer
-Bachelor's Degree,Vegetable Farmer
-Bachelor's Degree,Fruit Farmer
-Bachelor's Degree,Cattle Farmer
-Bachelor's Degree,Poultry Farmer
-Bachelor's Degree,Sheep Farmer
-Bachelor's Degree,Dairy Farm Manager
-Bachelor's Degree,Organic Farm Manager
-Bachelor's Degree,Commercial Farm Manager
-Bachelor's Degree,Soil Scientist
-Bachelor's Degree,Crop Consultant
-Bachelor's Degree,Plant Breeder
-Bachelor's Degree,Irrigation Technician
-Bachelor's Degree,Pest Control Technician
-Bachelor's Degree,Soil Conservation Technician
-Bachelor's Degree,Food Safety Specialist
-Bachelor's Degree,Product Development Scientist
-Bachelor's Degree,Quality Control Scientist
 Master's Degree,Surgeon
 Master's Degree,Cardiothoracic Surgeon
 Master's Degree,Orthopedic Surgeon
@@ -194,6 +194,9 @@ Master's Degree,Internist
 Master's Degree,Critical Care Nurse
 Master's Degree,Emergency Nurse
 Master's Degree,Labor and Delivery Nurse
+Master's Degree,Family Nurse Practitioner
+Master's Degree,Psychiatric Nurse Practitioner
+Master's Degree,Acute Care Nurse Practitioner
 Master's Degree,Orthopedic Physical Therapist
 Master's Degree,Pediatric Physical Therapist
 Master's Degree,Sports Physical Therapist
@@ -212,6 +215,57 @@ Master's Degree,Pathology Technician
 Master's Degree,Hospital Pharmacy Technician
 Master's Degree,Retail Pharmacy Technician
 Master's Degree,Compounding Pharmacy Technician
+Master's Degree,Bridge Engineer
+Master's Degree,Highway Engineer
+Master's Degree,Building Engineer
+Master's Degree,Traffic Engineer
+Master's Degree,Rail Engineer
+Master's Degree,Aviation Engineer
+Master's Degree,Foundation Engineer
+Master's Degree,Soil Mechanics Engineer
+Master's Degree,Rock Mechanics Engineer
+Master's Degree,UI Developer
+Master's Degree,UX Designer
+Master's Degree,Web Developer
+Master's Degree,Database Developer
+Master's Degree,Server-side Developer
+Master's Degree,API Developer
+Master's Degree,MEAN Stack Developer
+Master's Degree,MERN Stack Developer
+Master's Degree,LAMP Stack Developer
+Master's Degree,Power System Engineer
+Master's Degree,Renewable Energy Engineer
+Master's Degree,Electric Power Engineer
+Master's Degree,Embedded Systems Engineer
+Master's Degree,RF Engineer
+Master's Degree,Digital Design Engineer
+Master's Degree,Vehicle Design Engineer
+Master's Degree,Powertrain Engineer
+Master's Degree,Automotive Safety Engineer
+Master's Degree,Aerodynamics Engineer
+Master's Degree,Avionics Engineer
+Master's Degree,Propulsion Engineer
+Master's Degree,Process Engineer
+Master's Degree,Quality Control Engineer
+Master's Degree,Robotics Engineer
+Master's Degree,Petrochemical Engineer
+Master's Degree,Pharmaceutical Engineer
+Master's Degree,Food Process Engineer
+Master's Degree,Polymer Engineer
+Master's Degree,Metallurgical Engineer
+Master's Degree,Ceramic Engineer
+Master's Degree,Water Treatment Engineer
+Master's Degree,Air Quality Engineer
+Master's Degree,Waste Management Engineer
+Master's Degree,Construction Project Manager
+Master's Degree,IT Project Manager
+Master's Degree,Manufacturing Project Manager
+Master's Degree,Logistics Manager
+Master's Degree,Supply Chain Manager
+Master's Degree,Production Manager
+Master's Degree,Quality Assurance Manager
+Master's Degree,Quality Control Manager
+Master's Degree,Continuous Improvement Manager
 Master's Degree,Mergers and Acquisitions Lawyer
 Master's Degree,Corporate Compliance Lawyer
 Master's Degree,Intellectual Property Lawyer
@@ -267,6 +321,9 @@ Doctoral Degree,Internist
 Doctoral Degree,Critical Care Nurse
 Doctoral Degree,Emergency Nurse
 Doctoral Degree,Labor and Delivery Nurse
+Doctoral Degree,Family Nurse Practitioner
+Doctoral Degree,Psychiatric Nurse Practitioner
+Doctoral Degree,Acute Care Nurse Practitioner
 Doctoral Degree,Orthopedic Physical Therapist
 Doctoral Degree,Pediatric Physical Therapist
 Doctoral Degree,Sports Physical Therapist
@@ -285,6 +342,57 @@ Doctoral Degree,Pathology Technician
 Doctoral Degree,Hospital Pharmacy Technician
 Doctoral Degree,Retail Pharmacy Technician
 Doctoral Degree,Compounding Pharmacy Technician
+Doctoral Degree,Bridge Engineer
+Doctoral Degree,Highway Engineer
+Doctoral Degree,Building Engineer
+Doctoral Degree,Traffic Engineer
+Doctoral Degree,Rail Engineer
+Doctoral Degree,Aviation Engineer
+Doctoral Degree,Foundation Engineer
+Doctoral Degree,Soil Mechanics Engineer
+Doctoral Degree,Rock Mechanics Engineer
+Doctoral Degree,UI Developer
+Doctoral Degree,UX Designer
+Doctoral Degree,Web Developer
+Doctoral Degree,Database Developer
+Doctoral Degree,Server-side Developer
+Doctoral Degree,API Developer
+Doctoral Degree,MEAN Stack Developer
+Doctoral Degree,MERN Stack Developer
+Doctoral Degree,LAMP Stack Developer
+Doctoral Degree,Power System Engineer
+Doctoral Degree,Renewable Energy Engineer
+Doctoral Degree,Electric Power Engineer
+Doctoral Degree,Embedded Systems Engineer
+Doctoral Degree,RF Engineer
+Doctoral Degree,Digital Design Engineer
+Doctoral Degree,Vehicle Design Engineer
+Doctoral Degree,Powertrain Engineer
+Doctoral Degree,Automotive Safety Engineer
+Doctoral Degree,Aerodynamics Engineer
+Doctoral Degree,Avionics Engineer
+Doctoral Degree,Propulsion Engineer
+Doctoral Degree,Process Engineer
+Doctoral Degree,Quality Control Engineer
+Doctoral Degree,Robotics Engineer
+Doctoral Degree,Petrochemical Engineer
+Doctoral Degree,Pharmaceutical Engineer
+Doctoral Degree,Food Process Engineer
+Doctoral Degree,Polymer Engineer
+Doctoral Degree,Metallurgical Engineer
+Doctoral Degree,Ceramic Engineer
+Doctoral Degree,Water Treatment Engineer
+Doctoral Degree,Air Quality Engineer
+Doctoral Degree,Waste Management Engineer
+Doctoral Degree,Construction Project Manager
+Doctoral Degree,IT Project Manager
+Doctoral Degree,Manufacturing Project Manager
+Doctoral Degree,Logistics Manager
+Doctoral Degree,Supply Chain Manager
+Doctoral Degree,Production Manager
+Doctoral Degree,Quality Assurance Manager
+Doctoral Degree,Quality Control Manager
+Doctoral Degree,Continuous Improvement Manager
 Doctoral Degree,Mergers and Acquisitions Lawyer
 Doctoral Degree,Corporate Compliance Lawyer
 Doctoral Degree,Intellectual Property Lawyer

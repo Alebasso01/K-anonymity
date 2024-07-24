@@ -26,12 +26,7 @@
                         },
                         "Advanced Practice Nurse": {
                             "name": "Advanced Practice Nurse",
-                            "categories": [
-                                {
-                                    "name": "Nurse Practitioner",
-                                    "specialties": ["Family Nurse Practitioner", "Psychiatric Nurse Practitioner", "Acute Care Nurse Practitioner"]
-                                }
-                            ]
+                            "items": ["Family Nurse Practitioner", "Psychiatric Nurse Practitioner", "Acute Care Nurse Practitioner"]
                         }
                     }
                 },
