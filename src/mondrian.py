@@ -177,7 +177,7 @@ def mondrian(database, k, qis, sd, ei, json_files, ordinal_qis, check=None):
     
     anonymized_data = pd.concat(generalized_partitions, ignore_index=True)
     perturbated_data = add_perturbation(anonymized_data, sensitive_data)
-    perturbated_data.to_csv('anonymized.csv', index=False)
+    perturbated_data.to_csv('src/data/anonymized.csv', index=False)
     print("Anonymized data saved in anonymized.csv")
     print(f"Number of partitions: {len(dataframe_partitions)}")
     
@@ -199,7 +199,7 @@ json_files = {
 
 k = 3
 
-data = pd.read_csv("generation\\database.csv")
+data = pd.read_csv("src/data/database.csv")
 
 numerical_qis = ['age']
 categorical_qis = ['gender', 'city', 'education', 'profession']

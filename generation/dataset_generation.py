@@ -118,6 +118,6 @@ if __name__ == "__main__":
     num_records = 1000
     data = generate_fake_data(num_records, cities, genders, education_distribution, profession_mapping, income_mapping)
 
-    save_to_csv(data, 'database.csv')
+    save_to_csv(data, '../src/data/database.csv')
 
     print("Dataset generato con successo e salvato in 'database.csv'.")
