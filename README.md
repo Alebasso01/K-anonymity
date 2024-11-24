@@ -36,7 +36,7 @@ pip install faker pandas numpy matplotlib
 
 Run the mondrian:
 ```sh
-python mondrian.py
+python src/mondrian.py
 ```
 
 
